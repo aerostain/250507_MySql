@@ -39,10 +39,14 @@ select*from personal_rrhh;
 
 #insert into negocios values(null,'',default);
 #insert into personal_rrhh values(null,'','','','','',,,,,default);
+insert into negocios values(null,'Lvge',default);
+insert into negocios values(null,'Proseguridad',default);
+insert into negocios values(null,'Alarmas',default);
 insert into negocios values(null,'Lvge_Proseguridad_Alarmas',default);
 insert into negocios values(null,'Proseguridad_Alarmas',default);
 insert into negocios values(null,'Lvge_Alarmas',default);
 insert into negocios values(null,'Lvge_Proseguridad',default);
+
 
 insert into personal_rrhh values(null,'Viviana','Limas','Paredes','Gerente RRHH','Gerente RRHH',1,1,null,null,default);
 insert into personal_rrhh values(null,'Alina','Limas','Paredes','Jefe de RRHH','Jefa Lvge',1,1,null,null,default);
@@ -76,4 +80,6 @@ from personal_rrhh as t1
 inner join negocios as t2 on t1.negocio_entrabajo=t2.id
 left join personal_rrhh as t3 on t1.subjefe=t3.id
 order by Orden ;
+
+truncate negocios;
 
