@@ -4,9 +4,10 @@
 * Fechas y hora siempre deben guardarse en formato UTC y luego convertirlas en web cliente.
 * Usar Gerente, Jefe, Subjefe
 * `truncate table;` borra todos los registros de una base de datos sin necesidad de borrar la tabla `drop table;`.
+* 
 
 ## Syntaxis útil
-```{sql}
+```sql
 # Borrar Registros
 delete from negocios where id=5;
 
