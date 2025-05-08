@@ -70,16 +70,33 @@ update personal_rrhh set subjefe=2 where puesto like 'Analis%' and cargo like '%
 update personal_rrhh set subjefe=3 where puesto like 'Analis%' and cargo like '%Proseguri%';
 update personal_rrhh set subjefe=3 where puesto like 'Analis%' and cargo like '%Ala%';
 
+# Eliminar Registros no Tablas
+truncate negocios;
+
 # Auto-Join
 select*from personal_rrhh;
 select*from negocios;
 
-select 
+select t1.id,
 t1.negocio_entrabajo as Orden,t2.n_negocio as Negocio, t1.nombre, t1.puesto,t1.cargo,t3.nombre as Subjefe, t3.cargo as SubjefePuesto
 from personal_rrhh as t1 
 inner join negocios as t2 on t1.negocio_entrabajo=t2.id
 left join personal_rrhh as t3 on t1.subjefe=t3.id
 order by Orden ;
 
-truncate negocios;
+select nombre,puesto,cargo
+from personal_rrhh 
+where jefe=1 or subjefe=1;
+
+select nombre,puesto,cargo
+from personal_rrhh 
+where jefe=2 or subjefe=2;
+
+select nombre,puesto,cargo
+from personal_rrhh 
+where jefe=3 or subjefe=3;
+
+select id
+from personal_rrhh 
+where jefe=2 or subjefe=2;
 
